@@ -1,5 +1,5 @@
 /* DEVELOPER: ANGELA TACKETT
-CMIS 141 - INTRO TO PROGRAMMING 06MAR2023
+        DATE: 06MAR2023
 
 This Java program allows a user to manage customer data by providing a menu of options. 
 The user can add a single or multiple customers, display all customers, retrieve data for
