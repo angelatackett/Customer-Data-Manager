@@ -1,15 +1,14 @@
-/* DEVELOPER: ANGELA TACKETT
-        DATE: 06MAR2023
-
-This Java program allows a user to manage customer data by providing a menu of options. 
-The user can add a single or multiple customers, display all customers, retrieve data for
-a specific customer, or retrieve a list of customers based on a sales range. The program 
-uses a CustomerData class to store and manipulate the customer data. The program uses a 
-scanner to obtain user input and a switch statement to route the user's selection to the 
-appropriate method. */
+/** DEVELOPER: ANGELA TACKETT
+*      DATE: 06MAR2023
+*
+* This Java program allows a user to manage customer data by providing a menu of options. 
+* The user can add a single or multiple customers, display all customers, retrieve data for
+* a specific customer, or retrieve a list of customers based on a sales range. The program 
+* uses a CustomerData class to store and manipulate the customer data. The program uses a 
+* scanner to obtain user input and a switch statement to route the user's selection to the 
+* appropriate method. */
 
 import java.util.Scanner;
-import java.util.InputMismatchException;
 
 public class Main {
 
@@ -18,8 +17,8 @@ public class Main {
 	
 	public static void main(String[] args) {
 		// DISPLAYS user menu options | prompts user for selection
-		boolean exit = false;
-	    while (!exit) {
+		int choice = 0;
+		do {
 	    	System.out.println();
 	        System.out.println("             MENU\n");
 	        System.out.println("1: Add multiple new customers");
@@ -30,19 +29,10 @@ public class Main {
 	        System.out.println("9: Exit program");
 	
 			System.out.print("\nEnter your selection: ");
-			int choice = 0;
-			while (true) { // ensures selection is integer
-				try {
-					choice = in.nextInt();
-					break;
-				} catch (InputMismatchException e) {
-					System.out.println("Invalid input. Please enter an integer.");
-					in.nextLine();
-				}
-			}
+			choice = in.nextInt();
 			in.nextLine();
-	        
-	        // ASSIGNS options to proper method()
+
+			// ASSIGNS options to proper method()
 	        switch (choice) {
 	            case 1:
 	                addMultipleCustomers();
@@ -61,13 +51,19 @@ public class Main {
 	                break;
 	            case 9:
 	                System.out.println("Exiting program...");
-	                exit = true;
 	                break;
 	            default:
 	                System.out.println("Invalid selection. Please try again.");
 	        }
-	    }
+			
+
+		} while (choice != 9);
+			
+
+	        
+
 	}
+
 	
 	// METHODS() - SELF EXPLANATORY TITLES
 	
